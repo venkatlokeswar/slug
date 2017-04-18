@@ -1,45 +1,40 @@
-<!DOCTYPE html>
-<html>
-    <head>
-        <title>Laravel</title>
 
-        <link href="https://fonts.googleapis.com/css?family=Lato:100" rel="stylesheet" type="text/css">
+@extends('layout.index')
+@section('content')
+<div class='col-lg-12'>
+    <div class="col-lg-12">
+        <h1 class="logo">SLUG</h1>
+    </div>
+    <div class="col-lg-12">
+          <div class="col-lg-6 col-lg-push-3">
+              {!!Form::open([ 'url'=> route('login'),'class' => 'login-form'  ])!!}
+              <div class="row col-lg-12">
+                    <div class="form-group col-lg-5" id="input-username">
+                        {!! Form::text('username','',[ 'class' => 'form-control no-border has-error',
+                                                               'placeholder' => 'Username',
+                                                               'id' => 'username']) !!}
+                                                               <div class="error-message" id="error-username">
+                                                                   <i class="carrot"></i>
+                                                                   <p id="user-error-message" class="error-font">Some dummy text</p>
+                                                               </div>
+                   </div>              
+                    <div class="form-group col-lg-5" id="input-password">
+                        {!! Form::password('password',[ 'class' => 'form-control no-border',
+                                                               'placeholder' => 'Password',
+                                                               'id' => 'password']) !!}
+                                                               <div class="error-message" id="error-password">
+                                                                   <i class="carrot"></i>
+                                                                   <p id="user-error-message" class="error-font">Some dummy text</p>
+                                                               </div>
+                   </div>   
+                  <div class="form-group col-lg-2">
+                        {!! Form::button('Login',[ 'class' => 'btn btn-primary',
+                                                   'id' => 'login-button']) !!}
+                   </div>  
+              </div>
 
-        <style>
-            html, body {
-                height: 100%;
-            }
-
-            body {
-                margin: 0;
-                padding: 0;
-                width: 100%;
-                display: table;
-                font-weight: 100;
-                font-family: 'Lato';
-            }
-
-            .container {
-                text-align: center;
-                display: table-cell;
-                vertical-align: middle;
-            }
-
-            .content {
-                text-align: center;
-                display: inline-block;
-            }
-
-            .title {
-                font-size: 96px;
-            }
-        </style>
-    </head>
-    <body>
-        <div class="container">
-            <div class="content">
-                <div class="title">{{ $name }}</div>
-            </div>
-        </div>
-    </body>
-</html>
+              {!!Form::close()!!}
+          </div>
+    </div>
+</div>
+@endsection
