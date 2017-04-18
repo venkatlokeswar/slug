@@ -12,6 +12,7 @@
 */
 
 Route::get('/', [
+
     'as' => 'index',
     'uses' => 'LoginController@index'
 ]);
@@ -20,3 +21,5 @@ Route::post('/login', [
      'as' => 'login',
      'uses' => 'LoginController@getLogin'
 ]);
+
+

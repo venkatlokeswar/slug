@@ -1,3 +1,4 @@
+
 @extends('layout.index')
 @section('content')
 <div class='col-lg-12'>
