@@ -1,5 +1,6 @@
 $(function(){
-       $('#login-button').click(function(){
+       $('.login-form').submit(function(e){
+           e.preventDefault();
         var userName = $('#username').val();
         var passWord = $('#password').val();    
         
@@ -33,15 +34,31 @@ $(function(){
         }
         
         if(validated){
-
-           var userLoggedIn = $.post("/login",{
-               userName : userName,
-               passWord : passWord
-           });
+            var _token = $('meta[name=csrf-token]').attr('content');
+             $.ajax({
+                type: "POST",
+                url: "/login",
+                data: $(this).serialize(),
+                success: function (data) {
+                  if(data.status === 'success'){
+                      window.location.href ="/dashboard";
+                  }
+                  else{
+                    loginError("Invalid username or password")
+                  }
+                },
+                error: function (data) {
+                    loginError("Something went wrong. Please try again")
+                }
+              });
        }
 
     });
-    
+    var loginError = function(message){
+            $('#invalid-credientials').find('span').text(message);
+            $('#invalid-credientials').slideDown(300);
+            $('#username').val(data.username);
+    }
     
     var validateEmail = function(userName){
         var regex = /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i;

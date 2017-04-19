@@ -25,7 +25,7 @@
 .login-form{
     /*margin-left: 5%;*/
     height: 10%;
-    background-color: #fff !important;
+    background-color: inherit;
 }
 
 *{
@@ -69,3 +69,41 @@
     margin-top: 5%;
 }
 
+.large-text{
+    font-size: 30px;
+    font-weight: bold;
+     margin-top: -22%;
+}
+body{
+    background-color: #edeff1 !important;
+}
+
+
+.btn{
+    &-circular{
+        border-radius: 360px !important;
+        width: 60px !important;
+        height: 60px !important;
+    }
+    &-shadow{
+        box-shadow: 0px 2px 6px 1px #666666;
+    }
+}
+
+.issue-type{
+    width: inherit;
+    padding-left: 2px;
+    list-style-type: none;
+    cursor:pointer;
+    li{
+           padding-left:2%;
+           display:block; 
+           height:45px;
+        &:hover{
+            background-color: #f1f1f1;
+        }
+        p{
+            line-height: 45px;
+        }
+    }
+}

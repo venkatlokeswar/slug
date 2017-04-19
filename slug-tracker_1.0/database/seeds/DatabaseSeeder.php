@@ -11,6 +11,12 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-        // $this->call(UsersTableSeeder::class);
+        DB::table('users')->delete();
+        User::create(array(
+        'email'    => 'admin',
+        'password' => Hash::make('admin')
+
+    ));
+      $this->call('DatabaseSeeder');
     }
 }
