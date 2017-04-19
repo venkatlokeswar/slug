@@ -1,23 +1,35 @@
-@import 'colors';
+
+@import '_colors';
 
 .no-border{
     border-radius: 0px !important; 
 }
 
+.grey-texture{
+    background-color: #f1f1f1;
+}
+
 .logo{
-    font-family: segoe ui light;
+    /*font-family: corble !important;*/ 
     font-size: 250px;
+    font-weight: 100;
     margin-top: 10%;
-    margin-left: 30%;
+    margin-left: auto;
     margin-bottom: 5%;
-    -webkit-text-stroke: 1.0px;
-    -webkit-text-fill-color: #FFFFFF;
+    /*-webkit-text-stroke: 1.0px;*/
+    -webkit-text-fill-color: #929292;
+    /*text-shadow : 5px 5px 20px #666666;*/
+
 }
 
 .login-form{
     /*margin-left: 5%;*/
     height: 10%;
     background-color: #fff !important;
+}
+
+*{
+    font-family: segoe ui !important;
 }
 
 .error-message{
@@ -27,6 +39,9 @@
     background-color: $errorMessageRed;
     border-radius: 2px;
     display: none;
+
+    text-align: left;
+
 }
 .carrot{
     width: 0;
@@ -46,3 +61,11 @@
     font-size: 18px;
     line-height: 29px;
 }
+
+
+.loading{
+    position: absolute;
+    margin-left: -23%;
+    margin-top: 5%;
+}
+

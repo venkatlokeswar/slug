@@ -1,15 +1,16 @@
 
 @extends('layout.index')
 @section('content')
-<div class='col-lg-12'>
+
+<div class='col-lg-12' style="text-align: center">
     <div class="col-lg-12">
         <h1 class="logo">SLUG</h1>
     </div>
     <div class="col-lg-12">
-          <div class="col-lg-6 col-lg-push-3">
+          <div class="col-lg-8 col-lg-push-3">
               {!!Form::open([ 'url'=> route('login'),'class' => 'login-form'  ])!!}
               <div class="row col-lg-12">
-                    <div class="form-group col-lg-5" id="input-username">
+                    <div class="form-group col-lg-4" id="input-username">
                         {!! Form::text('username','',[ 'class' => 'form-control no-border has-error',
                                                                'placeholder' => 'Username',
                                                                'id' => 'username']) !!}
@@ -18,7 +19,7 @@
                                                                    <p id="user-error-message" class="error-font">Some dummy text</p>
                                                                </div>
                    </div>              
-                    <div class="form-group col-lg-5" id="input-password">
+                    <div class="form-group col-lg-4" id="input-password">
                         {!! Form::password('password',[ 'class' => 'form-control no-border',
                                                                'placeholder' => 'Password',
                                                                'id' => 'password']) !!}
@@ -28,8 +29,9 @@
                                                                </div>
                    </div>   
                   <div class="form-group col-lg-2">
-                        {!! Form::button('Login',[ 'class' => 'btn btn-primary',
+                        {!! Form::button('Login',[ 'class' => 'btn btn-primary col-lg-12',
                                                    'id' => 'login-button']) !!}
+                                                   <span class="loading"><img src="images/loading.svg" alt="Kiwi standing on oval" width="25"></span>
                    </div>  
               </div>
 
