@@ -33,11 +33,13 @@ $(function(){
         }
         
         if(validated){
+
            var userLoggedIn = $.post("/login",{
                userName : userName,
                passWord : passWord
            });
        }
+
     });
     
     
