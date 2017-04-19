@@ -1,6 +1,7 @@
 
 @extends('layout.index')
 @section('content')
+
 <div class='col-lg-12' style="text-align: center">
     <div class="col-lg-12">
         <h1 class="logo">SLUG</h1>
